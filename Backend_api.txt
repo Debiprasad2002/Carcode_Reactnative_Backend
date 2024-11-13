@@ -1,0 +1,6 @@
+1- Authentication _ Register, Login 
+2- DTC Doctor
+3- Faultcode Database //api working
+4- Servicelite reset //api working
+5- Profile image upload // will be stored in database 
+6-  
