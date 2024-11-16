@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const diagnosticRoutes = require('./routes/diagnosticRoutes');
+const vehicleRoutes = require('./routes/vehicleRoutes');
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,10 @@ app.use('/auth', authRoutes);
 
 //Diagnostic Routes (DTC Doctor)
 app.use('/api/diagnostic', diagnosticRoutes);
+
+//Vehicle Routes
+app.use('/api', vehicleRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
