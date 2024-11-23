@@ -173,3 +173,6 @@ OUTPUT -
 
 // check the data base for the dtc doctor code query
 SELECT description FROM fault_codes WHERE code = 'P0123';
+it will show in the database 
+
+
