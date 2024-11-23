@@ -3,6 +3,7 @@ const axios = require('axios'); // Import Axios for making API requests
 // Fetch vehicle data from API
 exports.getVehicleInfo = async (req, res) => {
   const { registrationNumber } = req.query; // Get registration number from query params
+  console.log("hello")
 
   if (!registrationNumber) {
     return res.status(400).json({ message: "Registration number is required" });

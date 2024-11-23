@@ -1,0 +1,175 @@
+1- The API endpoint register(GET)
+
+http://localhost:3000/auth/register
+Input Value:
+
+The input value is a JSON object that includes:
+
+JSON
+{
+    "email": "dehiprasaibedantas@gmail.com",
+    "password": "password",
+    "confirmPassword": "password123",
+    "agreeToTerms": true
+}
+Use code with caution.
+
+Output Value:
+
+The output value is a JSON object that includes:
+
+JSON
+{
+    "message": "user registered successfully"
+}
+
+ 2- API Endpoint:login(GET)
+
+The API endpoint appears to be:
+
+http://localhost:3000/auth/login
+Input Value:
+
+The input value is a JSON object that includes:
+
+JSON
+{
+    "email": "debiprasadbedantas@gmail.com",
+    "password": "password123"
+}
+Use code with caution.
+
+Output Value:
+
+The output value is a JSON object that includes:
+
+JSON
+{
+    "message": "Login successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo1LCJ
+
+}
+
+3- API Endpoint:getSolution(DTC Doctor)(GET)
+
+The API endpoint appears to be:
+
+http://localhost:3000/api/diagnostic/getSolution
+Input Value:
+
+The input value is a JSON object that includes:
+
+JSON
+{
+    "code": "P0121"
+}
+Use code with caution.
+
+Output Value:
+
+The output value is a JSON object that includes:
+
+JSON
+{
+    "message": "solution found",
+    "solutions": [
+        {
+            "option": "The Throttle Position Sensor (TPS) is malfunctioning. You should replace it."
+        },
+        {
+            "option": "Throttle Position (TP) Sensor Circuit might have high voltage. Inspect the related components and check for any obvious faults. Further diagnostic testing may be required."
+        },
+        {
+            "option": "A/C High Side Temp Sensor Low Voltage. Inspect the related components and check for any obvious faults. Further diagnostic testing may be required."
+        }
+    ]
+}
+
+
+
+4- API Endpoint:Servicelite features getting all data from external api 
+
+The API endpoint appears to be:(GET)
+
+http://localhost:3000/api/vehicle-info?registrationNumber=EA65AMX
+Input Value:
+
+The input value is a query parameter:
+
+registrationNumber=FA65AMX
+Output Value:
+
+The output value is a JSON object that includes:
+
+JSON
+{
+    "registrationNumber": "FA65AMX",
+    "make": "AUDI",
+    "model": "A7",
+    "colour": "BLACK",
+    "engineCapacity": 2967,
+    "yearOfManufacture": 2015,
+    "vehicleAge": "9 years 2 months",
+    "wheelPlan": "2 AXLE RIGID BODY",
+    "dateOfLastFitnessIssued": "2024-08-25",
+    "typeApproval": "",
+    "co2Emissions": 142,
+    "registrationPlace": "HARIDWAR",
+    "taxStatus": "Taxed",
+    "taxDueDate": "2025-06-01",
+    "days": 200,
+    "motStatus": "Valid",
+    "days": 8
+}
+
+<--------------------------------------------------------------------------------------->
+
+5-http://localhost:3000/api/view_data(GET)
+
+INPUT - http://localhost:3000/api/view_data(GET)
+
+
+OUTPUT - {
+  "data": 
+    {
+      "ID": 22,
+      "Registration": "T500TAJ",
+      "Make": "Mercedes_Benz",
+      "Model": "S-Class",
+      "Fixed": "✔"
+    },
+    {
+      "ID": 23,
+      "Registration": "Sl70ppv",
+      "Make": "Nissan",
+      "Model": "Murano",
+      "Fixed": "✔"
+    },
+    {
+      "ID": 28,
+      "Registration": "KW68VPC",
+      "Make": "Mercedes_Benz",
+      "Model": "C-Class",
+      "Fixed": "✘"
+    },
+}
+
+
+6- contact us 
+http://localhost:3000/api/contact (POST)
+INPUT - {
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "message": "Hello, I need help with my account."
+}
+
+
+OUTPUT - 
+{
+  "success": true,
+  "message": "Message saved successfully."
+}
+
+
+// check the data base for the dtc doctor code query
+SELECT description FROM fault_codes WHERE code = 'P0123';
