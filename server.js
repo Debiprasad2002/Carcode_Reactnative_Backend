@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/authRoutes');
 const diagnosticRoutes = require('./routes/diagnosticRoutes');
@@ -7,12 +8,23 @@ const vehicleRoutes = require('./routes/vehicleRoutes');
 const vehicleDetailsRoutes = require('./routes/vehicleDetailsRoutes');
 const carInfoRoutes = require('./routes/carInfoRoutes');
 const contactRoutes = require('./routes/contactRoutes');
+const profileRoutes = require('./routes/profileRoutes');
+const path = require("path"); // Add this line to import the path module
 
-
-
+//// Middleware
 dotenv.config();
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve uploaded files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+
+
+
+
 
 // Authentication Routes
 app.use('/auth', authRoutes);
@@ -34,6 +46,11 @@ app.use('/api', carInfoRoutes);
 
 // Use the contact routes
 app.use('/api', contactRoutes);
+
+// Profile pageRoutes
+app.use("/api/profile", profileRoutes);
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -5,6 +5,8 @@ const jwt = require('jsonwebtoken');
 // Register user
 exports.registerUser = async (req, res) => {
   const { name, email, password, confirmPassword, agreeToEULA } = req.body;
+  console.log("Register API hit, Request body:", req.body);
+
 
   try {
     // Log API hit
@@ -35,13 +37,15 @@ exports.registerUser = async (req, res) => {
 
     console.log("User registered successfully:", result);
     res.status(201).json({ message: 'User registered successfully' });
+    
+
   } catch (error) {
     console.error("Server error during registration:", error);
     res.status(500).json({ message: 'Internal server error' });
   }
 };
 
-// Login user
+//// Login user
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -76,7 +80,8 @@ exports.loginUser = async (req, res) => {
     }
 
     console.log("Generating JWT...");
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    // Include name and email in the JWT token payload
+    const token = jwt.sign({ id: user.id, name: user.name, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
     console.log("Login successful, token generated");
     res.status(200).json({ message: 'Login successful', token });

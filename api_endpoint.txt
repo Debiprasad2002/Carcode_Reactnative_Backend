@@ -176,3 +176,17 @@ SELECT description FROM fault_codes WHERE code = 'P0123';
 it will show in the database 
 
 
+
+Note - 
+ist of all we need to send the Name , email and profile picture witha  single click to the database and we have to 
+store the value in a table another table 
+2- when we hit the chat section api then it automatically fetch the image and name from the database when we call the api or 
+
+
+
+JWT TOOKEN - 
+
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNzY4MjcsImV4cCI6MTczMjM4MDQyN30.qufaE85ll4TWcGauktbdlDpaecsFH5Twoyj4PNGS-38"
+}eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNzY4MjcsImV4cCI6MTczMjM4MDQyN30.qufaE85ll4TWcGauktbdlDpaecsFH5Twoyj4PNGS-38
