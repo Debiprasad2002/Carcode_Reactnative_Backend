@@ -190,3 +190,24 @@ JWT TOOKEN -
   "message": "Login successful",
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNzY4MjcsImV4cCI6MTczMjM4MDQyN30.qufaE85ll4TWcGauktbdlDpaecsFH5Twoyj4PNGS-38"
 }eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MzIzNzY4MjcsImV4cCI6MTczMjM4MDQyN30.qufaE85ll4TWcGauktbdlDpaecsFH5Twoyj4PNGS-38
+
+
+7- // Profile page with profile picture upload feture 
+http://localhost:3000/api/profile/uploadProfile (post)
+Inside the authorization enter the Bearer Token (Token that you got from the login )[Token valid for 1hr]
+output - {
+    "message": "Profile uploaded successfully",
+    "data": {
+        "name": "Debiprasad Bedanta ",
+        "email": "debiprasadbedanta5@gmail.com",
+        "profilePicture": "/uploads/1732614724025-Biju image 2.jpg"
+    }
+}
+
+
+make one folder in root directoy uploads where the image will store 
+Add Middlware folder in the root directory then authmiddleware.Js
+then profileControllerjs
+profileRoutes.Js
+npm install cors
+npm install multer
