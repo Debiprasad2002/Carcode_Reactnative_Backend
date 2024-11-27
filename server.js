@@ -37,7 +37,7 @@ app.use('/api/diagnostic', diagnosticRoutes);
 app.use('/api', vehicleRoutes);
 
 //vehicledetails Routes
-app.use('/api/vehicle-details', vehicleDetailsRoutes);
+app.use("/api/vehicles", vehicleDetailsRoutes);
 
 
 //view data features

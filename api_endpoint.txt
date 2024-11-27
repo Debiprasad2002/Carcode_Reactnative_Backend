@@ -211,3 +211,23 @@ then profileControllerjs
 profileRoutes.Js
 npm install cors
 npm install multer
+
+
+8 -  Fetch information in service light reset page
+http://localhost:3000/api/vehicles
+
+Endpoint: http://localhost:5000/api/vehicles
+Method: GET
+Query Parameters:
+json
+Copy code
+{
+  "make": "ACURA",
+  "model": "CL",
+  "year": "1998"
+}
+
+output
+{
+  "information": "Reset the coloured indicator by inserting the key..."
+}

@@ -1,4 +1,4 @@
-const db = require('../config/db');
+
 
 // Controller to fetch vehicle information by make, model, and year
 // const getVehicleDetails = async (req, res) => {
@@ -42,39 +42,76 @@ const db = require('../config/db');
 
 
 
+// const getVehicleDetails = async (req, res) => {
+//   const { make, model, year } = req.query;
+//   console.log("Hello, get details vehicle");
+//   const years = parseInt(req.query.year, 10);
+
+//   if (!make || !model || !year) {
+//     return res.status(400).json({ message: 'Make, model, and year are required' });
+//   }
+
+//   try {
+//     const query = `SELECT *  FROM vehicles  WHERE 1 `;
+//     const  result  = await db.execute(query);
+//     console.log(result)
+
+//     // Log the query result for debugging
+//     // console.log("Query result:", rows);
+
+//     // Access the rows property directly
+//     const rows = result._rows || []; 
+//     console.log("Rows fetched:", rows);
+
+//     if (rows.length === 0) {
+//       return res.status(404).json({ message: 'No vehicle information found' });
+//     }
+
+//     // return res.status(200).json({ information: rows[0].information });
+//   } catch (error) {
+//     console.error("Database execution error:", error);
+//     return res.status(500).json({ message: 'Internal server error' });
+//   }
+// };
+
+
+
+
+
+// module.exports = { getVehicleDetails };
+
+
+
+const db = require('../config/db');
+
 const getVehicleDetails = async (req, res) => {
-  const { make, model, year } = req.query;
-  console.log("Hello, get details vehicle");
-  const years = parseInt(req.query.year, 10);
-
-  if (!make || !model || !year) {
-    return res.status(400).json({ message: 'Make, model, and year are required' });
-  }
-
   try {
-    const query = `SELECT *  FROM vehicles  WHERE 1 `;
-    const  result  = await db.execute(query);
-    console.log(result)
+    const { make, model, year } = req.query;
 
-    // Log the query result for debugging
-    // console.log("Query result:", rows);
-
-    // Access the rows property directly
-    const rows = result._rows || []; 
-    console.log("Rows fetched:", rows);
-
-    if (rows.length === 0) {
-      return res.status(404).json({ message: 'No vehicle information found' });
+    if (!make || !model || !year) {
+      return res.status(400).json({ message: "Make, model, and year are required" });
     }
 
-    // return res.status(200).json({ information: rows[0].information });
+    console.log("Received input:", { make, model, year });
+
+    // Query to fetch vehicle details
+    const [rows] = await db.query(
+      "SELECT information FROM vehicles WHERE make = ? AND model = ? AND year = ?",
+      [make, model, parseInt(year)]
+    );
+
+    console.log("Query result:", rows);
+
+    if (rows.length === 0) {
+      return res.status(404).json({ message: "No vehicle information found" });
+    }
+
+    return res.status(200).json({ information: rows[0].information });
   } catch (error) {
-    console.error("Database execution error:", error);
-    return res.status(500).json({ message: 'Internal server error' });
-  }
+    console.error("Error:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 };
-
-
 
 
 
