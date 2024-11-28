@@ -231,3 +231,20 @@ output
 {
   "information": "Reset the coloured indicator by inserting the key..."
 }
+
+
+
+9 - Profile page name and email automatically fetched throught the jwt token 
+http://localhost:3000/api/user/profile (GET)
+
+input - authorization
+          Bearer (token)
+
+          output - {
+  "message": "Profile details fetched successfully",
+  "user": {
+    "name": "ur name ",
+    "email": "ur email 
+  }
+}
+

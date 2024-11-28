@@ -48,8 +48,10 @@ app.use('/api', carInfoRoutes);
 app.use('/api', contactRoutes);
 
 // Profile pageRoutes
-app.use("/api/profile", profileRoutes);
+// app.use("/api/profile", profileRoutes);
 
+//Approach 2 profile page routes 
+app.use("/api/user", profileRoutes);
 
 
 const PORT = process.env.PORT || 3000;
