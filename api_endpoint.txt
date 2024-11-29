@@ -259,9 +259,12 @@ email
 profileControllerjs
 
 POST  - http://localhost:3000/api/profile/upload-image
+package - npm install formidable
+
 input - name , email , profilepicture 
 output - {
     "message": "Profile image uploaded successfully.",
     "profile_picture": "/uploads/profile_pictures/1732882893256_Stripe.jpg"
 }
 it will store the image in the users table at profile_picture column
+
