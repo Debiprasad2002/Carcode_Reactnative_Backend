@@ -244,7 +244,8 @@ input - authorization
   "message": "Profile details fetched successfully",
   "user": {
     "name": "ur name ",
-    "email": "ur email 
+    "email": "ur email ",
+    "profile_picture":"ur profile /null/ profile path 
   }
 }
 
