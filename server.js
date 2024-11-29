@@ -9,10 +9,14 @@ const vehicleDetailsRoutes = require('./routes/vehicleDetailsRoutes');
 const carInfoRoutes = require('./routes/carInfoRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const profileRoutes = require('./routes/profileRoutes');
-const path = require("path"); // Add this line to import the path module
+const profileImageRoutes = require('./routes/profileImageRoutes');
+const path = require('path'); // Add this line to import the path module
+
+ // Import the profile page routes
 
 //// Middleware
 dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -54,7 +58,13 @@ app.use('/api', contactRoutes);
 app.use("/api/user", profileRoutes);
 
 
+// Profile Image Routes
+app.use('/api/profile', profileImageRoutes);
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
