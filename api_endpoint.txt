@@ -1,3 +1,24 @@
+Remaining Endpoint
+
+1. Forget password 
+2. Profile page  (Done)
+3. Chat (done)
+4. Car details update 
+5. Card details delete 
+6. Image upload in profile page (Done)
+7. Fetch Information in Service Light Reset page (done)
+8. Blog Page ( new functionality)
+9. Damage Report Page 
+10. Image And Comment ( Maybe not sure )
+11- Registration car info 
+
+
+
+
+
+
+
+
 1- The API endpoint register(GET)
 
 http://localhost:3000/auth/register
@@ -268,3 +289,45 @@ output - {
 }
 it will store the image in the users table at profile_picture column
 
+11- http://localhost:3000/api/car-register(car-info registraion)(POST)
+input - {
+    "registration": "123ABC",
+    "make": "Toyota",
+    "model": "Corolla",
+    "fault_code": "P0123",
+    "description": "Throttle position sensor malfunction",
+    "is_fixed": 1
+}
+
+output - {
+    "message": "Car information registered successfully."
+}
+
+
+12 - http://localhost:3000/api/car-crud/update(update)PUT
+input - {
+    "registration": "123ABC",
+    "make": "Mercedes_Benz",
+    "model": "S-Class",
+    "fault_code": "P010162",
+    "description": "Updated description",
+    "is_fixed": 1
+}
+
+output - {
+  "message": "Car information updated successfully."
+}
+
+13 - http://localhost:3000/api/car-delete/delete(DEKETE)
+input - {
+    "registration": "123ABC",
+    "make": "Mercedes_Benz",
+    "model": "S-Class",
+    "fault_code": "P010162",
+    "description": "Updated description",
+    "is_fixed": 1
+}
+output - 
+{
+  "message": "Car information deleted successfully."
+}

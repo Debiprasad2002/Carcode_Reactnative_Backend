@@ -10,6 +10,10 @@ const carInfoRoutes = require('./routes/carInfoRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const profileImageRoutes = require('./routes/profileImageRoutes');
+const carRegisterRoutes = require('./routes/carRegisterRoutes');
+const carRegisterCrudRoutes = require('./routes/carRegisterCrudRoutes');
+const carRegisterDeleteRoutes = require('./routes/carRegisterDeleteRoutes');
+
 const path = require('path'); // Add this line to import the path module
 
  // Import the profile page routes
@@ -60,6 +64,19 @@ app.use("/api/user", profileRoutes);
 
 // Profile Image Routes
 app.use('/api/profile', profileImageRoutes);
+
+
+// Car Register Routes
+app.use('/api/car-register', carRegisterRoutes);
+
+
+
+//Car_info crud operation
+app.use('/api/car-crud', carRegisterCrudRoutes);
+
+
+//car_info page delete api 
+app.use('/api/car-delete', carRegisterDeleteRoutes);
 
 
 const PORT = process.env.PORT || 3000;
