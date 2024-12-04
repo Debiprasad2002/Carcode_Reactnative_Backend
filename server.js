@@ -76,6 +76,7 @@ app.use('/api/car-crud', carRegisterCrudRoutes);
 
 
 //car_info page delete api 
+// Use the delete routes
 app.use('/api/car-delete', carRegisterDeleteRoutes);
 
 
