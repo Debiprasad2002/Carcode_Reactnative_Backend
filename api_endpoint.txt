@@ -318,7 +318,7 @@ output - {
   "message": "Car information updated successfully."
 }
 
-13 - http://localhost:3000/api/car-delete/delete(DEKETE)
+13 - http://localhost:3000/api/car-delete/delete(DELETE) optional value you can take both value for response 
 input - {
     "registration": "123ABC",
     "make": "Mercedes_Benz",
@@ -329,5 +329,17 @@ input - {
 }
 output - 
 {
+  "message": "Car information deleted successfully."
+}
+
+OR 
+ input 
+ {
+    "registration": "T500TAJ",
+    "make": "Mercedes_Benz",
+    "model": "S-Class"
+}
+
+output - {
   "message": "Car information deleted successfully."
 }
