@@ -356,14 +356,23 @@ output - {
 15- http://localhost:3000/api/car-damage/add[POST]
 input - 
 {
-    "registration": "ABC12345",
-    "make": "A3",
-    "model": "S-Class",
+    "car_id": "ABC12345",
+    "userid": "A3",
     "damage_side": "Side 3",
     "damage_type": "Body",
     "damage_category": "Hood",
     "description": "hi it has been scratch an sdf sdf s dsfsf d xyz ."
 }
+
+optional|
+input 
+{
+    "damage_type": "Body",
+    "damage_category": "Rear Bumper",
+    "description": "Minor scratch",
+    "damage_side": "left"
+}
+
 
 output - {
   "message": "Car damage report added successfully."
