@@ -344,7 +344,7 @@ output - {
   "message": "Car information deleted successfully."
 }
 
-
+here is the chat api 
 
 14- Chat api 
 1-Get api we need to fetch the infromation like name , timestamp , message from the database 
