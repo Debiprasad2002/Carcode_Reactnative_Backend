@@ -343,3 +343,11 @@ OR
 output - {
   "message": "Car information deleted successfully."
 }
+
+
+
+14- Chat api 
+1-Get api we need to fetch the infromation like name , timestamp , message from the database 
+2-post api we need to submit the message in the database 
+3- Recent 30 messages need to share in the screen like we need to implement the recent 30 message in from the databas 
+4- We need to create new row everytime when the user hit the message .
