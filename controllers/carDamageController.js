@@ -1,69 +1,39 @@
-const db = require('../config/db');
+const db = require('../config/db'); // Import the database connection
 
-// Add a new damage report
+// Function to add a damage report
 exports.addDamageReport = async (req, res) => {
     try {
         const {
-            registration,
-            make,
-            model,
-            damage_side,
+            car_id = null, // Optional
+            userid = null, // Optional
             damage_type,
             damage_category,
             description,
+            damage_side
         } = req.body;
 
-        // Validate required fields
-        if (!registration || !make || !model || !damage_side || !damage_type || !damage_category) {
+        // Validate mandatory fields
+        if (!damage_type || !damage_category || !description || !damage_side) {
             return res.status(400).json({
-                message: 'All fields (registration, make, model, damage_side, damage_type, damage_category) are required.',
+                message: "All mandatory fields (damage_type, damage_category, description, damage_side) are required.",
             });
         }
 
-        // Insert data into the database
-        const query = `
-            INSERT INTO car_damage_report (registration, make, model, damage_side, damage_type, damage_category, description)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
-        `;
-        const [result] = await db.execute(query, [
-            registration,
-            make,
-            model,
-            damage_side,
-            damage_type,
-            damage_category,
-            description || null,
-        ]);
+        // Insert data into the damage_report table
+        const [result] = await db.execute(
+            `INSERT INTO damage_report (car_id, userid, damage_type, damage_category, description, damage_side) VALUES (?, ?, ?, ?, ?, ?)`,
+            [car_id, userid, damage_type, damage_category, description, damage_side]
+        );
 
         res.status(201).json({
-            message: 'Car damage report added successfully.',
-            // reportId: result.insertId,
+            message: "Damage report added successfully",
+            // report_id: result.insertId,
         });
     } catch (error) {
-        console.error('Error adding damage report:', error);
-        res.status(500).json({ message: 'Server error', error: error.message });
-    }
-};
-
-// Get all damage reports or a specific one
-exports.getDamageReports = async (req, res) => {
-    try {
-        const { registration } = req.query;
-
-        let query = 'SELECT * FROM car_damage_report';
-        const values = [];
-
-        // If registration is provided, filter by it
-        if (registration) {
-            query += ' WHERE registration = ?';
-            values.push(registration);
-        }
-
-        const [rows] = await db.execute(query, values);
-
-        res.status(200).json(rows);
-    } catch (error) {
-        console.error('Error fetching damage reports:', error);
-        res.status(500).json({ message: 'Server error', error: error.message });
+        console.error(error);
+        res.status(500).json({
+            message: "Server error",
+            error: error.message,
+        });
     }
 };

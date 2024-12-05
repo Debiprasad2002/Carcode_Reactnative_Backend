@@ -351,3 +351,22 @@ output - {
 2-post api we need to submit the message in the database 
 3- Recent 30 messages need to share in the screen like we need to implement the recent 30 message in from the databas 
 4- We need to create new row everytime when the user hit the message .
+
+
+15- http://localhost:3000/api/car-damage/add[POST]
+input - 
+{
+    "registration": "ABC12345",
+    "make": "A3",
+    "model": "S-Class",
+    "damage_side": "Side 3",
+    "damage_type": "Body",
+    "damage_category": "Hood",
+    "description": "hi it has been scratch an sdf sdf s dsfsf d xyz ."
+}
+
+output - {
+  "message": "Car damage report added successfully."
+}
+
+
