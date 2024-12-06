@@ -379,3 +379,28 @@ output - {
 }
 
 
+16- forgot password api 
+http://localhost:3000/api/forgot-password[POST]
+input 
+{
+  "email": "debiprasadbedanta@gmail.com"
+}
+
+output - {
+  "message": "Password reset link sent to your email."
+}
+
+then you will recieve the output of email with token 
+
+
+17 - Endpoint: POST /api/reset-password[POST] write ur own token and password 
+http://localhost:3000/api/reset-password
+input 
+{
+  "resetToken": "e9324841f06fe9f5ea990c969a406e3ebcf3ebc3cb09db2a36dab0fb00372752",
+  "newPassword": "new123"
+}
+output-
+{
+  "message": "Password reset successfully."
+}
