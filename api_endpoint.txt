@@ -379,7 +379,9 @@ output - {
 }
 
 
-16- forgot password api 
+16- 
+package install - npm install nodemailer bcrypt crypto
+forgot password api 
 http://localhost:3000/api/forgot-password[POST]
 input 
 {
@@ -402,5 +404,31 @@ input
 }
 output-
 {
+  "message": "Password reset successfully."
+}
+
+
+18 - npm install bcryptjs [OTP based featuers ]
+npm install sequelize mysql2
+
+http://localhost:3000/api/password/request-otp[POST]
+input - 
+{
+    "email": "debiprasadbedanta@gmail.com"
+}
+
+output 
+{
+  "message": "OTP sent successfully."
+}
+
+http://localhost:3000/api/password/verify-otp[POST]
+{
+    "email": "debiprasadbedanta@gmail.com",
+    "otp": "304336",
+    "newPassword": "hi123"
+}
+
+output{
   "message": "Password reset successfully."
 }

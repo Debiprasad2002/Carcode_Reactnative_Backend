@@ -1,4 +1,6 @@
 const mysql = require('mysql2/promise'); // Use the promise wrapper
+
+
 require('dotenv').config();
 
 const db = mysql.createPool({
@@ -10,6 +12,10 @@ const db = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
 });
+
+
+
+
 
 // Test the connection
 (async () => {
@@ -24,3 +30,6 @@ const db = mysql.createPool({
 })();
 
 module.exports = db;
+
+
+
