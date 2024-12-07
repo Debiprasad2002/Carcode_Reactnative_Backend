@@ -107,6 +107,40 @@ const path = require('path');
 const multer = require('multer');
 
 // ** GET Method: Fetch Profile Details **
+// const getProfileDetails = async (req, res) => {
+//   try {
+//     // Get token from request header
+//     const token = req.headers.authorization?.split(' ')[1]; // Format: Bearer <token>
+
+//     if (!token) {
+//       return res.status(401).json({ message: 'Token not provided' });
+//     }
+
+//     // Verify and decode the token
+//     const decodedToken = jwt.verify(token, process.env.JWT_SECRET); // Make sure JWT_SECRET is set in .env
+//     const userEmail = decodedToken.email; // Extract email from token payload
+
+//     // Fetch user details from the database using email
+//     const query = 'SELECT name, email, profile_picture FROM users WHERE email = ?';
+//     const [rows] = await db.execute(query, [userEmail]);
+
+//     if (rows.length === 0) {
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+
+//     // Send the user details as a response
+//     res.status(200).json({
+//       message: 'Profile details fetched successfully',
+//       user: rows[0], // { name, email, profile_picture }
+//     });
+//   } catch (error) {
+//     console.error('Error fetching user details:', error.message);
+//     res.status(500).json({ message: 'Error fetching user details', error: error.message });
+//   }
+// };
+
+
+// ** GET Method: Fetch Profile Details **
 const getProfileDetails = async (req, res) => {
   try {
     // Get token from request header
@@ -120,8 +154,8 @@ const getProfileDetails = async (req, res) => {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET); // Make sure JWT_SECRET is set in .env
     const userEmail = decodedToken.email; // Extract email from token payload
 
-    // Fetch user details from the database using email
-    const query = 'SELECT name, email, profile_picture FROM users WHERE email = ?';
+    // Fetch user details (including id) from the database using email
+    const query = 'SELECT id, name, email, profile_picture FROM users WHERE email = ?';
     const [rows] = await db.execute(query, [userEmail]);
 
     if (rows.length === 0) {
@@ -131,13 +165,15 @@ const getProfileDetails = async (req, res) => {
     // Send the user details as a response
     res.status(200).json({
       message: 'Profile details fetched successfully',
-      user: rows[0], // { name, email, profile_picture }
+      user: rows[0], // { id, name, email, profile_picture }
     });
   } catch (error) {
     console.error('Error fetching user details:', error.message);
     res.status(500).json({ message: 'Error fetching user details', error: error.message });
   }
 };
+
+
 
 // ** Multer Configuration for File Upload **
 const upload = multer({
