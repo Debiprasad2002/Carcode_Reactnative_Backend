@@ -15,6 +15,8 @@ const carRegisterCrudRoutes = require('./routes/carRegisterCrudRoutes');
 const carRegisterDeleteRoutes = require('./routes/carRegisterDeleteRoutes');
 const carDamageRoutes = require('./routes/carDamageRoutes');
 const otpPasswordRoutes = require('./routes/otpPasswordRoutes');
+const carCommentRoutes = require('./routes/carCommentRoutes'); // Import carComment routes
+
 
 
 const path = require('path'); // Add this line to import the path module
@@ -91,6 +93,9 @@ app.use('/api/car-damage', carDamageRoutes);
 //for the password reset feature 
 app.use('/api/password', otpPasswordRoutes);
 
+
+ // Register carComment routes
+app.use('/api', carCommentRoutes); // Register carComment routes
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
