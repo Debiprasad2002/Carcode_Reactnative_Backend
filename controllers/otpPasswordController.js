@@ -53,6 +53,9 @@ exports.requestOtp = async (req, res) => {
     }
 };
 
+
+const bcrypt = require('bcryptjs'); // Import bcrypt
+
 // POST: Verify OTP and Reset Password
 exports.verifyOtpAndResetPassword = async (req, res) => {
     const { email, otp, newPassword } = req.body;
@@ -71,6 +74,7 @@ exports.verifyOtpAndResetPassword = async (req, res) => {
         const storedOtp = user[0].otp;
         const otpExpires = user[0].otpExpires;
 
+        // Validate OTP and expiration
         if (!storedOtp || new Date() > new Date(otpExpires)) {
             return res.status(400).json({ message: 'OTP is invalid or has expired.' });
         }
@@ -79,8 +83,10 @@ exports.verifyOtpAndResetPassword = async (req, res) => {
             return res.status(400).json({ message: 'OTP is incorrect.' });
         }
 
-        const hashedPassword = crypto.createHash('sha256').update(newPassword).digest('hex');
+        // Hash the new password using bcrypt
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
 
+        // Update the user's password and clear OTP fields
         await db.query(
             'UPDATE users SET password = ?, otp = NULL, otpExpires = NULL WHERE email = ?',
             [hashedPassword, email]
@@ -88,7 +94,7 @@ exports.verifyOtpAndResetPassword = async (req, res) => {
 
         res.status(200).json({ message: 'Password reset successfully.' });
     } catch (err) {
-        console.error(err);
+        console.error('Error during password reset:', err);
         res.status(500).json({ message: 'Server error', error: err.message });
     }
 };
