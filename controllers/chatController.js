@@ -1,36 +1,48 @@
-const db = require('../config/db');
+const db = require('../config/db'); // Assuming db.js is already configured
 
-// Controller to handle sending a chat message
-const sendMessage = async (req, res) => {
-  const { message, userid } = req.body;
+// POST: Send Message
+exports.sendMessage = async (req, res) => {
+    try {
+        const { name, message, userid } = req.body;
+        const profile_picture = req.file ? `/uploads/chatimage/${req.file.filename}` : null;
 
-  // Input validation
-  if (!message || !userid) {
-    return res.status(400).json({
-      success: false,
-      error: 'Message and userid are required.',
-    });
-  }
+        // Validation
+        if (!name || !message || !userid) {
+            return res.status(400).json({ message: 'Name, message, and userid are required.' });
+        }
 
-  try {
-    // Insert the chat message into the database
-    const query = 'INSERT INTO chat_messages (message, userid) VALUES (?, ?)';
-    const [result] = await db.execute(query, [message, userid]);
+        // Save message to database
+        const query = `
+            INSERT INTO chat_screen_message (name, message, userid, profile_picture)
+            VALUES (?, ?, ?, ?)
+        `;
+        const [result] = await db.query(query, [name, message, userid, profile_picture]);
 
-    // Success response
-    return res.status(200).json({
-      success: true,
-      message: 'Message sent',
-      data: { id: result.insertId, message, userid },
-    });
-  } catch (err) {
-    // Error response
-    console.error('Database error:', err);
-    return res.status(500).json({
-      success: false,
-      error: 'An error occurred while saving the chat message.',
-    });
-  }
+        res.status(201).json({
+            message: 'Message sent successfully.',
+            id: result.insertId,
+            profile_picture,
+        });
+    } catch (error) {
+        console.error('Error sending message:', error);
+        res.status(500).json({ message: 'Internal server error', error: error.message });
+    }
 };
 
-module.exports = { sendMessage };
+// GET: Fetch the most recent 30 messages
+exports.fetchMessages = async (req, res) => {
+    try {
+        const query = `
+            SELECT * FROM chat_screen_message
+            ORDER BY id DESC
+            LIMIT 30
+        `;
+        const [messages] = await db.query(query);
+
+        // Return messages in ascending order
+        res.status(200).json(messages.reverse());
+    } catch (error) {
+        console.error('Error fetching messages:', error);
+        res.status(500).json({ message: 'Internal server error', error: error.message });
+    }
+};

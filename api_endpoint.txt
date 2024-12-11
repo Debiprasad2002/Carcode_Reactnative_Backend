@@ -474,3 +474,57 @@ output - {
     "message": "Comment added successfully.",
     "imagePath": null //if image is not there or else image path will be there 
 }
+
+
+21 - GET API will get recent 30 message from the database table of chat section  [name , time stamp  , message ]
+POST - We will send name , message , 
+post - Name , message , userid , profile_picture(Non mandatory)
+get - Name  , message , userid , profile_picture 
+
+
+22- Api end point 
+http://localhost:3000/api/chat/fetchMessages[GET]
+out put - {
+  [
+  {
+    "id": 1,
+    "name": "Biju",
+    "message": "hello world everyone and i am creating this id for testing purpose only ",
+    "timestamp": "2024-12-11T08:23:36.000Z",
+    "userid": "11",
+    "profile_picture": null
+  },
+  {
+    "id": 2,
+    "name": "Biju",
+    "message": "hello world everyone and i am creating this id for testing purpose only ",
+    "timestamp": "2024-12-11T08:24:48.000Z",
+    "userid": "11",
+    "profile_picture": "/uploads/chatimage/1733925288922-IMG_5766.JPG"
+  },
+  {
+    "id": 3,
+    "name": "Pushkar ",
+    "message": "hello world everyone and i am creating this id for testing purpose only ",
+    "timestamp": "2024-12-11T08:33:35.000Z",
+    "userid": "12",
+    "profile_picture": null
+  },
+  {
+    "id": 4,
+    "name": "Pushkar ",
+    "message": "hello world everyone and i am creating this id for testing purpose only ",
+    "timestamp": "2024-12-11T08:34:18.000Z",
+    "userid": "12",
+    "profile_picture": "/uploads/chatimage/1733925859200-Screenshot_2023-06-01-23-52-47-19_e2d5b3f32b79de1d45acd1fad96fbb0f.jpg"
+  }
+]
+}
+
+http://localhost:3000/api/chat/sendMessage [POST]
+input {
+  name
+  message
+  userid
+  profile_picture(Non mandatory)
+}
