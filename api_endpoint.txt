@@ -528,3 +528,59 @@ input {
   userid
   profile_picture(Non mandatory)
 }
+
+
+23 - BLOG Page functionality
+Add the blog 
+http://localhost:3000/api/blogs/add [POST]
+form data
+input {
+  title
+  content
+  image
+}
+
+output 
+  {
+    "message": "Blog added successfully.",
+    "blogId": 2
+}
+
+update the blog feature 
+
+  http://localhost:3000/api/blogs/update [PUT]
+input {
+  id = mandatory
+  other non mandatory 
+}
+
+output {
+  {
+  "message": "Blog updated successfully."
+}
+
+
+delete the blog feature 
+ http://localhost:3000/api/blogs/delete
+
+ input { JSON
+  id = 1
+ }
+output {
+  {
+  "message": "Blog deleted successfully."
+}
+
+Read the blog page 
+http://localhost:3000/api/blogs/get
+
+output {
+   {
+    "id": 2,
+    "title": "this is a blog one ",
+    "content": "This is blog one content made for testing purpose only ",
+    "image": "/uploads/blogimage/image-1734009820679-344233515.JPG"
+  },
+}
+}
+}

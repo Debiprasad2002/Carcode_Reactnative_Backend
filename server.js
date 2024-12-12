@@ -17,6 +17,7 @@ const carDamageRoutes = require('./routes/carDamageRoutes');
 const otpPasswordRoutes = require('./routes/otpPasswordRoutes');
 const carCommentRoutes = require('./routes/carCommentRoutes'); // Import carComment route
 const chatRoutes = require('./routes/chatRoutes');
+const blogRoutes = require('./routes/blogRoutes');
 
 
 
@@ -39,6 +40,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use('/uploads/chatimage', express.static('uploads/chatimage'));
 
+app.use('/uploads/blogimage', express.static(path.join(__dirname, 'uploads/blogimage')));
 
 
 
@@ -103,6 +105,13 @@ app.use('/api', carCommentRoutes); // Register carComment routes
 
 // Chat routes
 app.use('/api/chat', chatRoutes);
+
+
+
+//  Blog Routes
+app.use('/api/blogs', blogRoutes);
+
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
