@@ -18,6 +18,7 @@ const otpPasswordRoutes = require('./routes/otpPasswordRoutes');
 const carCommentRoutes = require('./routes/carCommentRoutes'); // Import carComment route
 const chatRoutes = require('./routes/chatRoutes');
 const blogRoutes = require('./routes/blogRoutes');
+const faultCodeRoutes = require('./routes/faultCodeRoutes');
 
 
 
@@ -108,8 +109,17 @@ app.use('/api/chat', chatRoutes);
 
 
 
+
+
+// <-------------------------------------------------ADMIN GHUMU  PANNEL ROUTES -------------------------------------------------------------------------------->
+
 //  Blog Routes
 app.use('/api/blogs', blogRoutes);
+
+
+
+//  Fault code Routes
+app.use('/api', faultCodeRoutes);
 
 
 

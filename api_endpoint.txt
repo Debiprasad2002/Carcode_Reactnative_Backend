@@ -584,3 +584,85 @@ output {
 }
 }
 }
+
+
+
+
+24 - fault_code(admin pannel api )
+http://localhost:3000/api/fault-codes [POST] [ADD ]
+
+input {
+  {
+  "code": "P1234",
+  "description": "Test fault code description"
+}
+
+
+output {
+
+  {
+  "message": "Fault code added successfully."
+}
+
+http://localhost:3000/api/fault-codes [PUT] [update ]
+
+
+{
+  "id": 1,
+  "code": "P1234",
+  "description": "Updated fault code description"
+}
+Output:
+json
+Copy code
+{
+  "message": "Fault code updated successfully."
+}
+
+
+http://localhost:3000/api/fault-codes [DELETE] [Delete ]
+
+{
+  "id": 1
+}
+Output:
+json
+Copy code
+{
+  "message": "Fault code deleted successfully."
+}
+
+}
+}
+
+ADMIN PANEL
+Admin panel:
+1. User management
+2. fault code management/edit
+3. Blog editor/add
+4. Chat management
+5. Contact us inbox/reply
+
+
+1- Fault code management
+create 
+Edit 
+Delete 
+2- Blog completed
+CRUD opeartion 
+3- Chat mangement 
+
+
+
+<------------------------------------------------------------------------------------------------------------>
+DATABASE NEW TABLE LIST 
+DATABASE NAME - car_info
+1- blogs
+2- car_damage_report
+3- chat_screen_message
+4- contact_message
+5 - users
+6
+
+
+
