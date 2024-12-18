@@ -69,6 +69,12 @@ exports.loginUser = async (req, res) => {
     }
 
     const user = results[0];
+
+      // Check if user is blocked
+      if (user.status === 'blocked') {
+        return res.status(403).json({ message: 'Your account has been blocked. Please contact admin.' });
+      }
+
     console.log("User found:", user);
 
     console.log("Validating password...");

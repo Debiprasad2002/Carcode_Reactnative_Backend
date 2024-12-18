@@ -586,8 +586,6 @@ output {
 }
 
 
-
-
 24 - fault_code(admin pannel api )
 http://localhost:3000/api/fault-codes [POST] [ADD ]
 

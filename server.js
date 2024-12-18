@@ -19,6 +19,7 @@ const carCommentRoutes = require('./routes/carCommentRoutes'); // Import carComm
 const chatRoutes = require('./routes/chatRoutes');
 const blogRoutes = require('./routes/blogRoutes');
 const faultCodeRoutes = require('./routes/faultCodeRoutes');
+const userRoutes = require('./routes/userRoutes');
 
 
 
@@ -120,6 +121,10 @@ app.use('/api/blogs', blogRoutes);
 
 //  Fault code Routes
 app.use('/api', faultCodeRoutes);
+
+
+// Block and unblock Routes
+app.use('/api', userRoutes);
 
 
 
