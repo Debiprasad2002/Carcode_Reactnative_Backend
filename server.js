@@ -20,6 +20,7 @@ const chatRoutes = require('./routes/chatRoutes');
 const blogRoutes = require('./routes/blogRoutes');
 const faultCodeRoutes = require('./routes/faultCodeRoutes');
 const userRoutes = require('./routes/userRoutes');
+const adminRoutes = require("./routes/adminRoutes");
 
 
 
@@ -125,6 +126,9 @@ app.use('/api', faultCodeRoutes);
 
 // Block and unblock Routes
 app.use('/api', userRoutes);
+
+// Admin  user management routes
+app.use("/admin", adminRoutes);
 
 
 

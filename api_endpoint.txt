@@ -633,6 +633,69 @@ Copy code
 }
 }
 
+
+
+25 - User Block /unblock feature
+
+http://localhost:3000/api/block[POST]
+
+input 
+{
+  "userId": 1
+}
+
+output
+{
+  "message": "User blocked successfully."
+}
+
+http://localhost:3000/api/unblock
+
+input 
+{
+  "userId": 1
+}
+
+output
+{
+  "message": "User unblocked successfully."
+}
+
+
+26 - User management fetch data from the database (users table)
+http://localhost:3000/admin/users[GET]
+output {  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "profile_picture": null,
+      "name": "Debiprasad Dash",
+      "email": "debiprasadbedanta5@gmail.com",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "profile_picture": null,
+      "name": "Debiprasad Patnaik ",
+      "email": "debiprasadbedanta@gmail.com",
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "profile_picture": null,
+      "name": "Debiprasad rout ",
+      "email": "nexinfluence@gmail.com",
+      "status": "active"
+    },
+    >>>>>>>>>> so on 
+  ]
+}
+
+
+
+
+
+
 ADMIN PANEL
 Admin panel:
 1. User management
