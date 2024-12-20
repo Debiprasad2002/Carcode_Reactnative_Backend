@@ -692,6 +692,51 @@ output {  "success": true,
 }
 
 
+27 - Admin Chat management
+http://localhost:3000/admin/chats[GET]
+output{
+  {
+  "success": true,
+  "message": "Chats fetched successfully.",
+  "data": [
+    {
+      "id": 1,
+      "name": "Biju",
+      "message": "hello world everyone and i am creating this id for testing purpose only ",
+      "timestamp": "2024-12-11T08:23:36.000Z",
+      "userid": "11",
+      "profile_picture": null
+    },
+    {
+      "id": 2,
+      "name": "Biju",
+      "message": "hello world everyone and i am creating this id for testing purpose only ",
+      "timestamp": "2024-12-11T08:24:48.000Z",
+      "userid": "11",
+      "profile_picture": "/uploads/chatimage/1733925288922-IMG_5766.JPG"
+    },
+
+     ]   >>>>>>>>>>>>>>>>>>>>>>>>> so on 
+}
+}
+
+http://localhost:3000/admin/chats/delete[DELETE]
+input{
+  {
+  "id": 20
+}
+
+
+output {
+  {
+  "success": true,
+  "message": "Chat deleted successfully."
+}
+}
+}
+
+
+
 
 
 
@@ -726,4 +771,6 @@ DATABASE NAME - car_info
 6
 
 
-
+chat management 
+1- Fetch the all chat messages 
+2- Delete the chat message ( )

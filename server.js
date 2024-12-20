@@ -21,6 +21,7 @@ const blogRoutes = require('./routes/blogRoutes');
 const faultCodeRoutes = require('./routes/faultCodeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require("./routes/adminRoutes");
+const adminChatsRoutes = require('./routes/adminChatsRoutes');
 
 
 
@@ -129,6 +130,10 @@ app.use('/api', userRoutes);
 
 // Admin  user management routes
 app.use("/admin", adminRoutes);
+
+
+//  admin chat Routes
+app.use('/admin', adminChatsRoutes);
 
 
 
