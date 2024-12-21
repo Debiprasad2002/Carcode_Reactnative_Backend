@@ -22,6 +22,7 @@ const faultCodeRoutes = require('./routes/faultCodeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require("./routes/adminRoutes");
 const adminChatsRoutes = require('./routes/adminChatsRoutes');
+const adminContactRoutes = require('./routes/adminContactRoutes'); // Import the routes
 
 
 
@@ -134,6 +135,9 @@ app.use("/admin", adminRoutes);
 
 //  admin chat Routes
 app.use('/admin', adminChatsRoutes);
+
+//  Contact Routes
+app.use('/api', adminContactRoutes); // Mount admin contact routes
 
 
 
