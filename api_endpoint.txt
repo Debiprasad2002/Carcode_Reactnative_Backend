@@ -772,6 +772,25 @@ output
 
 
 
+29 - chat  Moderator feature for edit the message 
+http://localhost:3000/api/admin/edit-chat-message[PUT]
+input 
+
+{
+  "id": 1,
+  "message": "Updated chat message text."
+}
+
+
+output 
+{
+  "message": "Chat message updated successfully"
+}
+
+
+
+
+
 
 ADMIN PANEL
 Admin panel:

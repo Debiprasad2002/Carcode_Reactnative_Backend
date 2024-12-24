@@ -23,6 +23,7 @@ const userRoutes = require('./routes/userRoutes');
 const adminRoutes = require("./routes/adminRoutes");
 const adminChatsRoutes = require('./routes/adminChatsRoutes');
 const adminContactRoutes = require('./routes/adminContactRoutes'); // Import the routes
+const adminModeratorChatRoutes = require("./routes/adminModeratorChatRoutes");
 
 
 
@@ -114,7 +115,6 @@ app.use('/api/chat', chatRoutes);
 
 
 
-
 // <-------------------------------------------------ADMIN GHUMU  PANNEL ROUTES -------------------------------------------------------------------------------->
 
 //  Blog Routes
@@ -138,6 +138,9 @@ app.use('/admin', adminChatsRoutes);
 
 //  Contact Routes
 app.use('/api', adminContactRoutes); // Mount admin contact routes
+
+//routes for the edit moderator
+app.use("/api/admin", adminModeratorChatRoutes);
 
 
 
