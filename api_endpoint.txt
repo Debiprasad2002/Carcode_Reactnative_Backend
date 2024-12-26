@@ -789,6 +789,20 @@ output
 
 
 
+30 - Admin dashboard live count of information
+http://localhost:3000/api/admin/counts[GET]
+output {
+  "success": true,
+  "message": "Counts fetched successfully",
+  "data": {
+    "users": 10,
+    "fault_codes": 1471,
+    "chat_screen_messages": 14,
+    "contact_messages": 16
+  }
+}
+
+
 
 
 

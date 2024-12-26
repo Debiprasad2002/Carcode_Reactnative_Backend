@@ -24,6 +24,7 @@ const adminRoutes = require("./routes/adminRoutes");
 const adminChatsRoutes = require('./routes/adminChatsRoutes');
 const adminContactRoutes = require('./routes/adminContactRoutes'); // Import the routes
 const adminModeratorChatRoutes = require("./routes/adminModeratorChatRoutes");
+const adminDashboardRoutes = require("./routes/adminDashboardRoutes");
 
 
 
@@ -141,6 +142,10 @@ app.use('/api', adminContactRoutes); // Mount admin contact routes
 
 //routes for the edit moderator
 app.use("/api/admin", adminModeratorChatRoutes);
+
+
+// Live count of the users and other details in the admin pannel 
+app.use("/api", adminDashboardRoutes);
 
 
 
