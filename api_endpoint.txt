@@ -801,6 +801,356 @@ output {
     "contact_messages": 16
   }
 }
+
+
+31 - http://localhost:3000/api/mot/history?registrationNumber=EA65AMX[GET]
+output {
+  {
+  "success": true,
+  "message": "MOT history fetched successfully",
+  "data": {
+    "registrationNumber": "EA65AMX",
+    "make": "AUDI",
+    "model": "A7",
+    "mot": {
+      "motStatus": "Valid",
+      "motDueDate": "2025-01-23",
+      "days": 18
+    },
+    "motHistorySummary": {
+      "totalTests": 9,
+      "passedTests": 8,
+      "failedTests": 1
+    },
+    "motHistory": [
+      {
+        "completedDate": "2024.01.24 11:21:34",
+        "testResult": "PASSED",
+        "expiryDate": "2025.01.23",
+        "odometerValue": "102845",
+        "odometerUnit": "mi",
+        "motTestNumber": "180630568421",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2023.01.18 12:19:17",
+        "testResult": "PASSED",
+        "expiryDate": "2024.01.22",
+        "odometerValue": "93631",
+        "odometerUnit": "mi",
+        "motTestNumber": "977744541383",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2023.01.18 11:47:33",
+        "testResult": "FAILED",
+        "odometerValue": "93631",
+        "odometerUnit": "mi",
+        "motTestNumber": "403807469090",
+        "rfrAndComments": [
+          {
+            "text": "Rear Position lamp has a product on the lens or light source which significantly reduces light intensity  Film on lamps (4.2.3 (b) (ii))",
+            "type": "FAIL"
+          },
+          {
+            "text": "Rear Rear reflector defective or damaged by more than 50% of the reflecting surface  Film on rear lamps (4.8.1 (a) (ii))",
+            "type": "FAIL"
+          }
+        ]
+      },
+      {
+        "completedDate": "2022.01.19 13:27:07",
+        "testResult": "PASSED",
+        "expiryDate": "2023.01.22",
+        "odometerValue": "82418",
+        "odometerUnit": "mi",
+        "motTestNumber": "280265295801",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2021.01.22 16:01:52",
+        "testResult": "PASSED",
+        "expiryDate": "2022.01.22",
+        "odometerValue": "73043",
+        "odometerUnit": "mi",
+        "motTestNumber": "490031307670",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2020.01.23 11:53:15",
+        "testResult": "PASSED",
+        "expiryDate": "2021.01.22",
+        "odometerValue": "66848",
+        "odometerUnit": "mi",
+        "motTestNumber": "184215245947",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2019.11.11 14:51:01",
+        "testResult": "PASSED",
+        "expiryDate": "2020.11.10",
+        "odometerValue": "64119",
+        "odometerUnit": "mi",
+        "motTestNumber": "404412659102",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2019.01.17 12:22:52",
+        "testResult": "PASSED",
+        "expiryDate": "2020.01.16",
+        "odometerValue": "53631",
+        "odometerUnit": "mi",
+        "motTestNumber": "846618612192",
+        "rfrAndComments": []
+      },
+      {
+        "completedDate": "2018.09.13 15:58:54",
+        "testResult": "PASSED",
+        "expiryDate": "2019.10.12",
+        "odometerValue": "47390",
+        "odometerUnit": "mi",
+        "motTestNumber": "603373684321",
+        "rfrAndComments": []
+      }
+    ]
+  }
+}
+}
+
+
+32 - http://localhost:3000/api/hpi/full-check?registrationNumber=EA65AMX[GET]
+output {
+  {
+  "success": true,
+  "message": "Full HPI check completed successfully",
+  "data": {
+    "VehicleRegistration": {
+      "DateOfLastUpdate": "2024-06-12T16:49:47",
+      "Colour": "BLACK",
+      "VehicleClass": "Car",
+      "CertificateOfDestructionIssued": null,
+      "EngineNumber": "CRTE041962",
+      "EngineCapacity": "2967",
+      "TransmissionCode": "S",
+      "Exported": false,
+      "YearOfManufacture": "2015",
+      "WheelPlan": "2 AXLE RIGID BODY",
+      "DateExported": null,
+      "Scrapped": false,
+      "Transmission": "AUTO 7 GEARS",
+      "DateFirstRegisteredUk": "2015-10-13T00:00:00",
+      "Model": "A7 S LINE BLACK ED TDI QUAT SA",
+      "GearCount": 7,
+      "ImportNonEu": false,
+      "PreviousVrmGb": null,
+      "GrossWeight": 2435,
+      "DoorPlanLiteral": "5 DOOR HATCHBACK",
+      "MvrisModelCode": "GDR",
+      "Vin": "WAUZZZ4G1GN055561",
+      "Vrm": "EA65AMX",
+      "DateFirstRegistered": "2015-10-13T00:00:00",
+      "DateScrapped": null,
+      "DoorPlan": "14",
+      "YearMonthFirstRegistered": "2015-10",
+      "VinLast5": "55561",
+      "VehicleUsedBeforeFirstRegistration": false,
+      "MaxPermissibleMass": 2435,
+      "Make": "AUDI",
+      "MakeModel": "AUDI A7 S LINE BLACK ED TDI QUAT SA",
+      "TransmissionType": "Semi Auto",
+      "SeatingCapacity": 5,
+      "FuelType": "DIESEL",
+      "Co2Emissions": 142,
+      "Imported": false,
+      "MvrisMakeCode": "M3",
+      "PreviousVrmNi": null,
+      "VinConfirmationFlag": null
+    },
+    "VehicleHistory": {
+      "stolenRecord": false,
+      "financeRecord": false,
+      "writeOffRecord": false,
+      "stolen": null,
+      "finance": null,
+      "writeoff": null,
+      "V5CCertificateCount": 5,
+      "PlateChangeCount": 0,
+      "NumberOfPreviousKeepers": 4,
+      "V5CCertificateList": [
+        {
+          "CertificateDate": "2022-08-20T00:00:00"
+        },
+        {
+          "CertificateDate": "2022-01-24T00:00:00"
+        },
+        {
+          "CertificateDate": "2020-11-10T00:00:00"
+        },
+        {
+          "CertificateDate": "2019-02-05T00:00:00"
+        },
+        {
+          "CertificateDate": "2018-12-24T00:00:00"
+        }
+      ],
+      "KeeperChangesCount": 4,
+      "VicCount": 0,
+      "ColourChangeCount": null,
+      "ColourChangeList": null,
+      "KeeperChangesList": [
+        {
+          "DateOfTransaction": "2022-08-20T00:00:00",
+          "NumberOfPreviousKeepers": 4,
+          "DateOfLastKeeperChange": "2022-08-20T00:00:00"
+        },
+        {
+          "DateOfTransaction": "2022-01-20T00:00:00",
+          "NumberOfPreviousKeepers": 3,
+          "DateOfLastKeeperChange": "2022-01-20T00:00:00"
+        },
+        {
+          "DateOfTransaction": "2020-11-01T00:00:00",
+          "NumberOfPreviousKeepers": 2,
+          "DateOfLastKeeperChange": "2020-11-01T00:00:00"
+        },
+        {
+          "DateOfTransaction": "2019-01-12T00:00:00",
+          "NumberOfPreviousKeepers": 1,
+          "DateOfLastKeeperChange": "2019-01-12T00:00:00"
+        }
+      ],
+      "PlateChangeList": [],
+      "VicList": null,
+      "ColourChangeDetails": {
+        "CurrentColour": "BLACK",
+        "NumberOfPreviousColours": 0,
+        "OriginalColour": "BLACK",
+        "LastColour": null,
+        "DateOfLastColourChange": null
+      }
+    },
+    "Dimensions": {
+      "UnladenWeight": 1825,
+      "RigidArtic": "RIGID",
+      "BodyShape": "NA",
+      "PayloadVolume": null,
+      "PayloadWeight": null,
+      "Height": 1420,
+      "NumberOfDoors": 5,
+      "NumberOfSeats": 5,
+      "KerbWeight": 1825,
+      "GrossTrainWeight": null,
+      "FuelTankCapacity": 73,
+      "LoadLength": null,
+      "DataVersionNumber": null,
+      "WheelBase": 2914,
+      "CarLength": 4974,
+      "Width": 1911,
+      "NumberOfAxles": 2,
+      "GrossVehicleWeight": 2435,
+      "GrossCombinedWeight": 2435
+    },
+    "Engine": {
+      "FuelCatalyst": "C",
+      "Stroke": 91,
+      "PrimaryFuelFlag": "Y",
+      "ValvesPerCylinder": 4,
+      "Aspiration": "Turbocharged",
+      "FuelSystem": null,
+      "NumberOfCylinders": 6,
+      "CylinderArrangement": "V",
+      "ValveGear": "DOHC",
+      "Location": "FRONT",
+      "Description": "3.0 TDI (EU6)-A",
+      "Bore": 83,
+      "Make": "Audi",
+      "FuelDelivery": null
+    },
+    "Performance": {
+      "Torque": {
+        "FtLb": 369,
+        "Nm": 500,
+        "Rpm": 1250
+      },
+      "NoiseLevel": null,
+      "DataVersionNumber": null,
+      "Power": {
+        "Bhp": 215,
+        "Rpm": 3250,
+        "Kw": 160
+      },
+      "MaxSpeed": {
+        "Kph": 239,
+        "Mph": 149
+      },
+      "Co2": 142,
+      "Particles": null,
+      "Acceleration": {
+        "Mph": null,
+        "Kph": null,
+        "ZeroTo60Mph": null,
+        "ZeroTo100Kph": null
+      }
+    },
+    "Consumption": {
+      "ExtraUrban": {
+        "Lkm": 5,
+        "Mpg": 56.5
+      },
+      "UrbanCold": {
+        "Lkm": 6.1,
+        "Mpg": 46.3
+      },
+      "Combined": {
+        "Lkm": 5.4,
+        "Mpg": 52.3
+      }
+    },
+    "SmmtDetails": {
+      "Range": "A7",
+      "FuelType": "Diesel",
+      "EngineCapacity": "2967",
+      "MarketSectorCode": "AA",
+      "CountryOfOrigin": "Germany",
+      "ModelCode": "GDR",
+      "ModelVariant": "A7 Sportback TDI Black Edition Quattro Semi-Auto",
+      "DataVersionNumber": null,
+      "NumberOfGears": 7,
+      "NominalEngineCapacity": 3,
+      "MarqueCode": "M3",
+      "Transmission": "Semi Automatic",
+      "BodyStyle": "Coupe",
+      "VisibilityDate": "14/06/2015",
+      "SysSetupDate": "14/06/2015",
+      "Marque": "Audi",
+      "CabType": "NA",
+      "TerminateDate": "30/03/2018",
+      "Series": "4GF",
+      "NumberOfDoors": 5,
+      "DriveType": "4x4"
+    },
+    "vedRate": {
+      "Standard": {
+        "SixMonth": 115.5,
+        "TwelveMonth": 210
+      },
+      "VedCo2Emissions": 142,
+      "vedBand": "F",
+      "VedCo2Band": "F"
+    },
+    "General": {
+      "PowerDelivery": "Normal",
+      "TypeApprovalCategory": "M1",
+      "SeriesDescription": "4GF",
+      "DriverPosition": null,
+      "DrivingAxle": "4x4",
+      "DataVersionNumber": null,
+      "EuroStatus": "6b",
+      "IsLimitedEdition": null
+    }
+  }
+}
+}
  
 
 
