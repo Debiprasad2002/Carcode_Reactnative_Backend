@@ -801,9 +801,7 @@ output {
     "contact_messages": 16
   }
 }
-
-
-
+ 
 
 
 ADMIN PANEL
@@ -844,5 +842,4 @@ chat management
 Contac us 
 1- Fetch the all messages all things 
 2- when you clikc the reply button the email should be passwed as input and there will be open the email , and heading should be custom and the admin should be able to write the message 
-
 

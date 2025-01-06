@@ -25,6 +25,8 @@ const adminChatsRoutes = require('./routes/adminChatsRoutes');
 const adminContactRoutes = require('./routes/adminContactRoutes'); // Import the routes
 const adminModeratorChatRoutes = require("./routes/adminModeratorChatRoutes");
 const adminDashboardRoutes = require("./routes/adminDashboardRoutes");
+const motHistoryRoutes = require("./routes/motHistoryRoutes");
+const hpiCheckRoutes = require("./routes/hpiCheckRoutes");
 
 
 
@@ -114,6 +116,13 @@ app.use('/api', carCommentRoutes); // Register carComment routes
 app.use('/api/chat', chatRoutes);
 
 
+// MOT history route
+app.use("/api", motHistoryRoutes);
+
+//   HPI check
+app.use("/api/hpi", hpiCheckRoutes);
+
+
 
 
 // <-------------------------------------------------ADMIN GHUMU  PANNEL ROUTES -------------------------------------------------------------------------------->
@@ -149,9 +158,10 @@ app.use("/api", adminDashboardRoutes);
 
 
 
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
-
 
