@@ -8,7 +8,7 @@ exports.getMOTHistory = async (req, res) => {
     return res.status(400).json({ message: "Registration number is required" });
   }
 
-  const apiKey = "59488c5f186138122c70be83eb57fa3a"; // API key
+  const apiKey = "a132e5405ec6de964a3530472f6761a8"; // API key
   const apiUrl = `https://api.checkcardetails.co.uk/vehicledata/mot?apikey=${apiKey}&vrm=${registrationNumber}`;
 
   try {
