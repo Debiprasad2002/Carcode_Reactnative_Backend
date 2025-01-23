@@ -1151,7 +1151,51 @@ output {
   }
 }
 }
- 
+
+
+
+
+33 - Payment integration to do the paymennt 
+http://localhost:3000/api/stripe/create-payment-session[POST]
+
+input {
+  {
+  "name": "Debiprasad Patnaik",
+  "email": "debiprasadbedanta@gmail.com",
+  "amount": 100,
+  "currency": "eur"
+}
+
+output {
+  {
+  "url": "https://checkout.stripe.com/c/pay/cs_live_a1eUN5oefdiOc2n75uqfY8wJ5eHhqtQw2vBqryyTUzVrrjMGSR6LBvZWnL#fidkdWxOYHwnPyd1blppbHNgWjA0VG1EYl9AcjRINjJSS3xdZDU3dWhQTU9gV1RdbTxoX3R1dlBCRzVdZmRiZn9xdnFxfEkwU1cwSkZSfGc2fUNjbUJsQWpGQTxMS3BfZE19bGFtTkJ1Mm5dNTVOPTVVQXd2bScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
+  "sessionId": "cs_live_a1eUN5oefdiOc2n75uqfY8wJ5eHhqtQw2vBqryyTUzVrrjMGSR6LBvZWnL"
+}
+}
+}
+1-what is the expirytiming of the payment gate way feature , like after this time period the payment gateway information will be deactiviated we need to activate the subscrption again 
+2- Is client want to access only one currency or what are the other currency that the client is looking for , in our stripe payment integration we have implmented such type of feature like we can 
+accept the other coutnries currenc also ,if its okay then no need .
+
+
+
+34 -Payment integration part off the client currency will gbp and amount 4.99 .after hitting the api you will recieve the url , if you click the url then it will make the amount of the currency in the webpage 
+ http://localhost:3000/api/stripe/create-payment-session [POST]
+ {
+  input - {
+  "name": "Debiprasad Patnaik",
+  "email": "debiprasadbedanta@gmail.com",
+  "amount": 4.99,
+  "currency": "gbp"
+}
+output{
+  {
+  "url": "https://checkout.stripe.com/c/pay/cs_live_a1paPmBrcWiRwviyXUxNLLtYfaSycSI3GLAgVze5qVqnmj7f2Q6eDBHf4v#fidkdWxOYHwnPyd1blppbHNgWjA0VG1EYl9AcjRINjJSS3xdZDU3dWhQTU9gV1RdbTxoX3R1dlBCRzVdZmRiZn9xdnFxfEkwU1cwSkZSfGc2fUNjbUJsQWpGQTxMS3BfZE19bGFtTkJ1Mm5dNTVOPTVVQXd2bScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl",
+  "sessionId": "cs_live_a1paPmBrcWiRwviyXUxNLLtYfaSycSI3GLAgVze5qVqnmj7f2Q6eDBHf4v"
+}
+}
+ }
+
 
 
 ADMIN PANEL

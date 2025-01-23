@@ -27,6 +27,7 @@ const adminModeratorChatRoutes = require("./routes/adminModeratorChatRoutes");
 const adminDashboardRoutes = require("./routes/adminDashboardRoutes");
 const motHistoryRoutes = require("./routes/motHistoryRoutes");
 const hpiCheckRoutes = require("./routes/hpiCheckRoutes");
+const stripePaymentRoutes = require('./routes/stripePaymentRoutes');
 
 
 
@@ -124,6 +125,8 @@ app.use("/api", motHistoryRoutes);
 app.use("/api/hpi", hpiCheckRoutes);
 
 
+// Payment Routes
+app.use('/api/stripe', stripePaymentRoutes);
 
 
 

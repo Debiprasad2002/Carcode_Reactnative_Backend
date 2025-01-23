@@ -27,6 +27,7 @@
     "mysql2": "^3.11.5",
     "nodemailer": "^6.9.16",
     "path": "^0.12.7",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "stripe": "^17.5.0"
   }
 }
