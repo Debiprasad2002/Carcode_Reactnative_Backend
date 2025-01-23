@@ -1175,7 +1175,7 @@ output {
 }
 1-what is the expirytiming of the payment gate way feature , like after this time period the payment gateway information will be deactiviated we need to activate the subscrption again 
 2- Is client want to access only one currency or what are the other currency that the client is looking for , in our stripe payment integration we have implmented such type of feature like we can 
-accept the other coutnries currenc also ,if its okay then no need .
+accept the other coutnries currenc also ,if its okay then no need of it.
 
 
 
