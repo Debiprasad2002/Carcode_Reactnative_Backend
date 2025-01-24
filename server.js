@@ -125,10 +125,10 @@ app.use("/api", motHistoryRoutes);
 app.use("/api/hpi", hpiCheckRoutes);
 
 
-// Payment Routes
+// Payment Routes of the backend
 app.use('/api/stripe', stripePaymentRoutes);
 
-
+ 
 
 
 // <-------------------------------------------------ADMIN GHUMU  PANNEL ROUTES -------------------------------------------------------------------------------->

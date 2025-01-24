@@ -77,7 +77,7 @@ exports.handlePaymentSuccess = async (req, res) => {
     }
 };
 
-// Fetch Payment History
+// Fetch Payment History of the methond
 exports.getPaymentHistory = async (req, res) => {
     const { name, email } = req.query;
 
