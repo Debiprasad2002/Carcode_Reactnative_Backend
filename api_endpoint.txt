@@ -1198,6 +1198,49 @@ output{
 
 
 
+
+ 35 - Email report sent (after payment sucessfull)
+1. Create Payment Intent (POST)
+Endpoint: POST http://localhost:3000/api/stripe/create-payment-intent
+Request Body:
+json
+Copy
+Edit
+{
+  "name": "Debiprasad Dash",
+  "email": "debiprasadbedanta5@gmail.com",
+  "amount": 4.99,
+  "currency": "gbp",
+  "registrationNumber": "EA65AMX"
+}
+Expected Response:
+json
+Copy
+Edit
+{
+  "clientSecret": "pi_3QtkQnEw1M37WNyX1Gr7bv1e_secret_mSE7tY3sN6jVzFOJHbEITw8rf"
+}
+2. Save Payment and Fetch HPI Report (POST)
+Endpoint: POST http://localhost:3000/api/stripe/save-payment
+Request Body:
+json
+Copy
+Edit
+{
+  "paymentIntentId": "pi_3QtkQnEw1M37WNyX1Gr7bv1e_secret_mSE7tY3sN6jVzFOJHbEITw8rf",
+  "registrationNumber": "EA65AMX"
+}
+Expected Response:
+json
+Copy
+Edit
+{
+  "message": "Payment saved and HPI report sent successfully."
+}
+
+
+
+
 ADMIN PANEL
 Admin panel:
 1. User management

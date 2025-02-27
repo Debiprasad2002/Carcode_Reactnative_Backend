@@ -44,3 +44,4 @@ router.get('/profile', authMiddleware, getProfileDetails);
 router.post('/upload-picture', authMiddleware, uploadProfilePicture);
 
 module.exports = router;
+
